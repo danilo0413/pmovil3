@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/start-concert"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lista de Conciertos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Proximos conciertos</ion-label>
+    </ion-list-header>
+    <ion-item tappable *ngFor="let concert of listConcerts" routerLink="/detail-concert/{{concert.id}}">
+      <ion-label>
+        <h3>{{concert?.nombre}}</h3>
+        <p>Boleto: <strong>{{concert?.precio}}</strong></p>
+        <p>Fecha: <strong>{{concert?.fecha}}</strong></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

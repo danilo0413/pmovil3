@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>recordingCreate</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="createRecordingForm" (submit)="createRecording()">
+    <ion-item>
+      <ion-label stacked> Recording Id </ion-label>
+      <ion-input formControlName="idRecording" type="text" placeholder="Cual es el ID de la grabacion?"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked> Name Recording </ion-label>
+      <ion-input formControlName="nameRecording" type="text" placeholder="Como se llama la grabacion?"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked> Type Melody</ion-label>
+      <ion-input formControlName="typeMelody" type="text" placeholder="Que tipo de melodia es?"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked> Number Cabins </ion-label>
+      <ion-input formControlName="numberCabins" type="text" placeholder="Numero de cabinas?"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked> Owner</ion-label>
+      <ion-input formControlName="owner" type="text" placeholder="Quien es el productor?"></ion-input>
+    </ion-item>
+    <ion-button expand="block" type="submit" [disabled]="createRecording.invalid"> Add Recording </ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{currentConcert?.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      Ingreso del concierto:
+      <span [class.rentable]="currentConcert?.ingreso > 0" [class.no-rentable]="currentConcert?.ingreso < 0"> {{currentConcert?.ingreso | currency}}</span>
+    </ion-card-header>
+    <ion-card-content>
+      <h3>Informacion del Concierto</h3>
+      <p>Boleto: <strong> {{currentConcert?.precio}}</strong></p>
+      <p>Fecha: <strong>{{currentConcert?.fecha}}</strong></p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class=".agregar-usuario-form">
+    <ion-card-header>
+      Agregar Usuario
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">
+          Nombre:
+        </ion-label>
+        <ion-input [(ngModel)]="nombreUsuario" type="text" aria-placeholder="Cual es el nombre del usuario"></ion-input>
+      </ion-item>
+      <ion-button color="primary" (click)="agregarUsuario(nombreUsuario)" [disabled]="!nombreUsuario"> Agregar Usuario</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <p>Boleto: <strong>{{currentConcert?.precio}}</strong></p>
+      <p>Fecha: <strong>{{currentConcert?.fecha}}</strong></p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ (song | async)?.songName }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-carrd>
+    <h3>Artist</h3>
+    <p>
+      The song {{ (song | async)?.songName }} was released by {{ (song | async)?.artistName }}.
+    </p>
+    <h3>Album</h3>
+    <p>
+      It was part of the {{ (song | async)?.albumName }} album.
+    </p>
+    <h3>Description</h3>
+    <p>
+      {{ (song | async)?.songDescription }}
+    </p>
+    <ion-button expand="block" (click)="deleteSong()">DELETE SONG</ion-button>
+  </ion-carrd>
+  <ion-card>
+    <h3>Recording</h3>
+    <p>
+      The recording {{ (recording | async)?.nameRecording }} was released by {{ (recording | async)?.nameRecording }}.
+    </p>
+    <h3>Type Of Melody</h3>
+    <p>
+      It was part of the {{ (recording | async)?.typeMelody }} .
+    </p>
+    <h3>Owner</h3>
+    <p>
+      {{ (recording | async)?.owner }}
+    </p>
+    <ion-button expand="block" (click)="deleteRecording()">DELETE RECORDING</ion-button>
+  </ion-card>
+</ion-content>
